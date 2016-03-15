@@ -5,17 +5,25 @@ numbers = 1
 while numbers <= 100
 	result = ""
 
-	if numbers % 3 == 0 && numbers % 5 == 0
-  		result = result + "FizzBuzz"
+	if numbers % 3 == 0
+    result = result + "Fizz"
+  end
 
-  	elsif numbers % 5 == 0
-  		result = result + "Buzz"
+  if numbers % 5 == 0
+  	result = result + "Buzz"
+  end
 
-  	elsif numbers % 3 == 0
-  		result = result + "Fizz"
+  if numbers.to_s.include? "1"
+  	result = result + "Bang"
+  end
 
-  	else
-  		
-  		
-  		
-	end
+  if result.empty?
+    puts numbers
+
+  else
+    puts result
+  end
+
+  numbers = numbers + 1
+
+end
